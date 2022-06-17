@@ -13,7 +13,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith({SpringExtension.class})
 @ContextConfiguration(classes = TestConfiguration.class)
-@TestExecutionListeners( // comment this line to see that things are not cleaned up by default
+@TestExecutionListeners( // TODO comment this line to see that things are not cleaned up by default
         value = MarkDirtyExecutionListener.class,
         mergeMode = TestExecutionListeners.MergeMode.MERGE_WITH_DEFAULTS
 )
@@ -24,6 +24,7 @@ class SpringKafkaTest {
     }
 
     @KafkaListener(topics = "someTopic", groupId = "someGroup")
+    // TODO comment this line to see it works with or without MarkDirtyExecutionListener
     public void listenToSomeTopic(@Header(name = KafkaHeaders.RECEIVED_MESSAGE_KEY) String messageKey) {
     }
 

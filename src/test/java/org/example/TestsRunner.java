@@ -9,7 +9,7 @@ import java.util.List;
 
 public class TestsRunner {
     public static void main(String[] args) throws Exception {
-        // If you are running without MarkDirtyExecutionListener, increase the loop count
+        // TODO If you are running without MarkDirtyExecutionListener, increase the loop count
         // to see "memory leak" or "too many open files" issues
         for (int i = 0; i < 1; i++) {
             CommandLineOptions options = new CommandLineOptions();
